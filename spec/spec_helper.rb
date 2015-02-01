@@ -1,6 +1,7 @@
-require 'codeclimate-test-reporter'
-require 'simplecov'
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 require 'coveralls'
+Coveralls.wear!
 require 'new'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
@@ -8,7 +9,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   Coveralls::SimpleCov::Formatter,
   SimpleCov::Formatter::HTMLFormatter
 ]
-SimpleCov.start 'rails'
 
 # load sources and create symlinks to all the task folders for rspec to pickup
 # only do this locally, not with ci
